@@ -13,8 +13,8 @@ class TurnUserAdminController {
         user_id: String(user_id),
       });
       return response.json(user);
-    } catch (error) {
-      return response.status(400).json({ error });
+    } catch (err) {
+      return response.status(404).json({ error: err });
     }
   }
 }

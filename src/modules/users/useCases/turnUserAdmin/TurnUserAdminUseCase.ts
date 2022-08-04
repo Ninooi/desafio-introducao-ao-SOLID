@@ -12,9 +12,11 @@ class TurnUserAdminUseCase {
     const user = this.usersRepository.findById(user_id);
 
     if (!user) {
-      throw new Error("User not found!");
+      throw new Error("User not found");
     }
+
     const updatedUser = this.usersRepository.turnAdmin(user);
+
     return updatedUser;
   }
 }
